@@ -1,0 +1,36 @@
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr class="d-flex">
+      <th scope="col" class="col-md-3 col-sm-8">Title</th>
+      <th scope="col" class="col-md-6">Description</th>
+      <th scope="col" class="col-md-1 col-sm-2">Status</th>
+      <th scope="col" class="col-md-2 col-sm-2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-template ngFor let-issue [ngForOf]="issues">
+        <tr class="d-flex">
+            <th scope="row" class="col-md-3 col-sm-7">{{issue.title}}</th>
+            <td class="col-md-6" >
+              <div>{{getDescription(issue)}}</div>
+              <button *ngIf="showReadMoreButton(issue)" type="button" class="btn btn-light btn-sm" (click)="toggleExpanded(issue)">
+                {{getShowMoreOrLessLabel(issue)}}
+              </button>
+            </td>
+            <td class="col-md-1 col-sm-2">
+              <span class="badge" [ngClass]="{
+                'badge-success': issue.status === 'Open',
+                'badge-secondary': issue.status === 'Closed',
+                'badge-warning': issue.status === 'Pending'
+              }">{{issue.status}}</span>
+            </td>
+            <td class="col-md-2 col-sm-2">
+              <button *ngIf="issue.status === 'Open'" type="button" class="btn btn-warning" (click)="startIssue(issue)">Start</button>
+              <button *ngIf="issue.status !== 'Closed'" type="button" class="btn btn-secondary" (click)="closeIssue(issue)">Close</button>
+            </td>
+          </tr>
+    </ng-template>
+  </tbody>
+</table>
+</div>

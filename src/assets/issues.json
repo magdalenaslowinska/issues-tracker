@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Sample issue 1",
+        "description": "Sample description 1",
+        "status": "Closed"
+    },
+    {
+        "title": "Sample issue 2",
+        "description": "Sample description which is veeeeeeeeeeeery long and needs to be truncated because it takes too much space on the screen, and the whole table could not be readible, you can click READ MORE button to see whole content",
+        "status": "Pending"
+    },
+    {
+        "title": "Sample issue 3 with some longer title ######### which is break into multiple lines",
+        "description": "Sample description 3",
+        "status": "Open"
+    },
+    {
+        "title": "Sample issue 4",
+        "description": "Sample description 4",
+        "status": "Pending"
+    },
+    {
+        "title": "Another open issue",
+        "description": "Sample description .....",
+        "status": "Open"
+    }
+]
